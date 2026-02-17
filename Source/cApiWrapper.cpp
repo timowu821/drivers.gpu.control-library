@@ -2246,7 +2246,10 @@ ctlGetLinkedDisplayAdapters(
 * 
 * @details
 *     - To get the DCE feature status and, if feature is enabled, returns the
-*       current histogram, or to set the brightness at the phase-in speed
+*       current histogram, or to set the brightness at the phase-in speed.
+*       This is a reserved capability. By default, DCE is not supported/will
+*       not be enabled, need application to activate it, please contact Intel
+*       for activation.
 * 
 * @returns
 *     - CTL_RESULT_SUCCESS

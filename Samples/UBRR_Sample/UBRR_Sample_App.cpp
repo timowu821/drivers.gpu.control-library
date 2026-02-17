@@ -56,8 +56,9 @@ ctl_result_t EnumerateDisplayHandles(ctl_display_output_handle_t *hDisplayOutput
             continue;
         }
 
-        PowerOptimizationCaps.Size = sizeof(ctl_pfnGetPowerOptimizationCaps_t);
-        Result                     = ctlGetPowerOptimizationCaps(hDisplayOutput[DisplayIndex], &PowerOptimizationCaps);
+        PowerOptimizationCaps.Size    = sizeof(ctl_pfnGetPowerOptimizationCaps_t);
+        PowerOptimizationCaps.Version = 1;
+        Result                        = ctlGetPowerOptimizationCaps(hDisplayOutput[DisplayIndex], &PowerOptimizationCaps);
 
         LOG_AND_EXIT_ON_ERROR(Result, "ctlGetPowerOptimizationCaps");
 
